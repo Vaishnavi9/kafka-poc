@@ -18,7 +18,7 @@ public class MyKafkaConsumer {
     @Incoming("my-consumer")
     public void consume (String message) {
         System.out.println("before "+message);
-        if (null != message) kafkaProducer.sendMessage(message);
+        if (null != message) kafkaProducer.sendMessage(message.toUpperCase());
         System.out.println("after "+message);
     }
 }
